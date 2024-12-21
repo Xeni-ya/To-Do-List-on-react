@@ -1,15 +1,14 @@
-import Header from './components/Header'
-import Listitem from './components/Listitem'
-import './App.css'
+import './App.css';
+import Header from './components/Header';
+import Content from './components/Content';
 
 function App() {
-
   return (
-    <>
+    <div className="App">
       <Header />
-      <Listitem />
-    </>
-  )
+      <Content />
+    </div>
+  );
 }
 
 export default App

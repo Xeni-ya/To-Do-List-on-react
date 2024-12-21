@@ -1,10 +1,10 @@
-function Listitem() {
-  return {
-    < div >
-    <input type="text" />
-    <label></label>
-    </div >
-  };
+function ListItem(props) {
+  return (
+    <div>
+      <input type="checkbox"></input>
+      <label>{props.name}</label>
+    </div>
+  );
 }
 
-export default Listitem;
+export default ListItem;
