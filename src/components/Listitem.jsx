@@ -3,17 +3,18 @@ import styles from './listItem.module.css';
 
 function ListItem(props) {
   return (
-    <div className="item">
+    <div className={styles.item}>
       <input type="checkbox" className="checkbox"></input>
       <label className="label">{props.name}</label>
-      <button className="{styles.button}">x</button>
+      <button className={styles.button}>x</button>
     </div>
   );
 }
 
 ListItem.propTypes = {
+  div: PropTypes.string,
   checkbox: PropTypes.string,
-  label: PropTypes.string,
+  name: PropTypes.string,
   button: PropTypes.string,
 };
 
