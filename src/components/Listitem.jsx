@@ -2,13 +2,10 @@ import PropTypes from 'prop-types';
 import styles from './listItem.module.css';
 
 function ListItem(props) {
-
-  const { name, color } = props;
-
   return (
-    <div className={styles.item}>
-      <input type="checkbox" className="checkbox"></input>
-      <label className={styles.label}>{name}</label>
+    <div className={styles.item} {...props}>
+      <input type="checkbox" className={styles.checkbox}></input>
+      <label className={{ color: props.color }}>{props.name}</label>
       <button className={styles.button}>x</button>
     </div>
   );
