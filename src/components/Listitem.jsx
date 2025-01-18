@@ -5,7 +5,7 @@ function ListItem(props) {
   return (
     <div className={styles.item}>
       <input type="checkbox" className="checkbox"></input>
-      <label className="label">{props.name}</label>
+      <label className="{styles.label}">{props.name}</label>
       <button className={styles.button}>x</button>
     </div>
   );

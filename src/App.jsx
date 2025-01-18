@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './components/Header';
 import Content from './components/Content';
-import AddButton from './components/AddButton';
 import LoginPage from './components/LoginPage';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
           ? <Content />
           : <LoginPage />
       }
-      <AddButton />
     </div>
   );
 }

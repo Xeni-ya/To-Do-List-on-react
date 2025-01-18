@@ -8,10 +8,3 @@
 .read-the-docs {
   color: #888;
 }
-
-.item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-}
