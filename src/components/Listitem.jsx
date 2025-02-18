@@ -12,7 +12,7 @@ function ListItem(props) {
 
   return (
     <div className={styles.item} {...props}>
-      <input type="checkbox" className={styles.checkbox} onClick={handleChekedState}></input>
+      <input type="checkbox" className={styles.checkbox} onChange={handleChekedState}></input>
       <label style={cheked
         ? { textDecorationLine: 'line-through' }
         : { textDecorationLine: 'none' }}>{props.name}</label>
