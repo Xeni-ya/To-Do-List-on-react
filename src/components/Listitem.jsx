@@ -16,7 +16,7 @@ function ListItem(props) {
       <label style={cheked
         ? { textDecorationLine: 'line-through' }
         : { textDecorationLine: 'none' }}>{props.name}</label>
-      <button className={styles.button}>x</button>
+      <button className={styles.button} onClick={() => props.deleteItem(props.id)}>x</button>
     </div >
   );
 }

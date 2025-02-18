@@ -33,13 +33,19 @@ function Content() {
     }, []
   )
 
+  const deleteItem = (id) => {
+    const updatedList = items.filter((item) => item.id !== id)
+    setItems(updatedList)
+    localStorage.setItem('toDoList', JSON.stringify(updatedList))
+  }
+
   return (
     <main className={styles.content}>
       <ul>
         {
           items.map((item) =>
-            <ListItem key={item.id} name={item.name} color={item.color} />
-          )
+            <ListItem key={item.id} name={item.name} color={item.color} deleteItem={deleteItem() => deleteItem(item.id)} />
+        )
         }
       </ul>
       <AddButton />
