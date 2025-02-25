@@ -1,16 +1,22 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from "./content.module.css"
-import AddButton from './AddButton';
+import AddItem from './AddItem';
 import ListItem from './ListItem';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function Content() {
 
   const [items, setItems] = useLocalStorage("toDoList", [])
+  const [newItem, setNewItem] = useState("")
 
   const deleteItem = (id) => {
     const updatedList = items.filter((item) => item.id !== id)
     setItems(updatedList)
+  }
+
+  const addItem = (e) => {
+    e.preventDefault()
+    console.log(newItem)
   }
 
   return (
@@ -22,7 +28,7 @@ function Content() {
           ))
         }
       </ul>
-      <AddButton />
+      <AddItem newItem={newItem} setNewItem={setNewItem} addItem={addItem} />
     </main>
   );
 }
