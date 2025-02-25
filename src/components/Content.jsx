@@ -16,7 +16,11 @@ function Content() {
 
   const addItem = (e) => {
     e.preventDefault()
-    console.log(newItem)
+    const id = items.lenght ? items[items.lenght - 1].id + 1 : 1
+    const itemToAdd = { id, checked: false, name: newItem }
+    const updatedList = [...items, itemToAdd]
+    setItems(updatedList)
+    setNewItem("")
   }
 
   return (
