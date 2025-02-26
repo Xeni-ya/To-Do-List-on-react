@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from "./content.module.css"
 import AddItem from './AddItem';
 import ListItem from './ListItem';
@@ -16,7 +16,7 @@ function Content() {
 
   const addItem = (e) => {
     e.preventDefault()
-    const id = items.lenght ? items[items.lenght - 1].id + 1 : 1
+    const id = items.length ? items[items.length - 1].id + 1 : 1
     const itemToAdd = { id, checked: false, name: newItem }
     const updatedList = [...items, itemToAdd]
     setItems(updatedList)

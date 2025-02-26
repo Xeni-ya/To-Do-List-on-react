@@ -1,13 +1,22 @@
 import styles from './addButton.module.css';
-import { useState } from 'react';
+import { useRef } from 'react';
 import React from 'react';
 
 function AddItem({ newItem, setNewItem, addItem }) {
 
+  const ref = useRef()
+
+  const focus = () => {
+    ref.current.focus()
+  }
+
   return (
     <form action="" className={styles.create}>
-      <input type="text" name="" id="" required value={newItem} onChange={(e) => setNewItem(e.target.value)} />
-      <button type="submit" onClick={AddItem}>Добавить</button>
+      <input ref={ref} type="text" required value={newItem} onChange={(e) => setNewItem(e.target.value.toUpperCase)} />
+      <button type="submit" onClick={addItem}>
+        Добавить
+      </button>
+      <button onClick={focus}></button>
     </form>
   );
 }
